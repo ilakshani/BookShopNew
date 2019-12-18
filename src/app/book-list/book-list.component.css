@@ -1,0 +1,152 @@
+.outer-container{
+    width: 100%;
+    height: 100%;
+    background-image: url('src\assets\images\434098.jpg');
+    background-size:contain ;
+}
+.inner-container{
+    width: 80%;
+    height: 90%;
+    margin-left:10%;
+    top:20px;
+    position: relative;
+    border-radius: 10px;
+    z-index: 1;
+    
+}
+.search-bar{
+    width: 100%;
+    margin-right: 10%;
+    margin-top: 5%;
+    margin-bottom: 2%;
+    background-color: rgba(173, 170, 169, 0.836);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.delete-button{
+    left:94%;
+    bottom:50px;
+    position: relative;
+    color:rgb(221, 92, 92);
+    font-size: 35px;
+    cursor:pointer;
+}
+.delete-button:hover {
+    color:rgb(231, 16, 16);
+}
+
+.book-list{
+    opacity: 80%;
+    width:95%;
+}
+.add-book{
+    width:40%;
+    position: absolute;
+    left:30%;
+    z-index: 2;
+    top:10%;
+    border-radius: 10px;
+}
+.add-book-container{
+    border: solid black;
+    border-radius: 10px;
+    background-color: rgba(228, 173, 122, 0.5);
+    z-index: 2;
+    padding: 5px;
+}
+
+.view-book{
+    width:50%;
+    height: 80%;
+    position: absolute;
+    left:25%;
+    z-index: 2;
+    top:10%;
+    border: solid rgba(228, 173, 122, 0.5);
+    border-radius: 10px;
+}
+.view-book-container{
+    background-color: transparent;
+    border-radius:10px ;
+    z-index: 2;
+    height: 100%;
+    padding: 5px;
+}
+.edit-book{
+    width:40%;
+    height: 80%;
+    position: absolute;
+    left:30%;
+    z-index: 2;
+    top:10%;
+    border: solid rgba(228, 173, 122, 0.5);
+    border-radius: 10px;
+}
+.edit-book-container{
+    background-color: transparent;
+    border-radius:10px ;
+    z-index: 2;
+    height: 100%;
+    padding: 5px;
+}
+.edit-form-container{
+    width: 100%;
+}
+.edit-form-field{
+    width: 90%;
+    margin-left: 5%;
+}
+
+.add-button{
+    font-size: 70px;
+    color: rgb(221, 92, 92);
+    margin-left: 91%;
+    margin-top: -5%;
+    position: absolute;
+    z-index: 2;
+    cursor:pointer;
+}
+.add-button:hover {
+    color:rgb(231, 16, 16);
+}
+
+div.new{
+    overflow-y: auto;
+    height:80%;
+}
+.one-book{
+    cursor: pointer;
+}
+.book-card{
+    padding: 3px;
+    transition: 0.3s;
+    height: 65px;
+}
+.book-card:hover{
+    
+    box-shadow: 0 0 17px -6px black;
+}
+button{
+    cursor: pointer;
+}
+.book-details{
+    height: 100%;
+    background-color: rgba(228, 173, 122, 0.5);
+}
+.book-content{
+    overflow-y: auto;
+    height:60%;
+    padding: 15px;
+}
+button.submit-button{
+    width:100px;
+}
+.edit-form{
+    width: 100%;
+}
+.title{
+    text-align: center;
+}
+
+

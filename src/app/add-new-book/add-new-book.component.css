@@ -1,0 +1,26 @@
+mat-form-field{
+    width:90%;
+    left:5%;
+}
+.addbook{
+    width:100%;
+}
+.title{
+    text-align: center;
+}
+.button1{
+    width:90%;
+    margin-bottom: 5%;
+    margin-top: 5%;
+    margin-left: 5%;
+}
+.button2{
+    width:90%;
+    margin-bottom: 5%;
+    margin-left: 5%;
+}
+#one{
+    width:40%;
+    float:left;
+    
+}
