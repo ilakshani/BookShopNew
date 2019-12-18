@@ -25,12 +25,25 @@ export class AddNewBookComponent implements OnInit {
   public deletestatus: boolean;
   public description: string;
 
-  bookNameFormControl = new FormControl('',[]);
-  authorNameFormControl = new FormControl('',[]);
-  publishedYearFormControl = new FormControl('',[]);
-  quantityFormControl = new FormControl('',[]);
-  priceFormControl = new FormControl('',[]);
-  descriptionFormControl = new FormControl('',[]);
+  bookNameFormControl = new FormControl('',[
+    Validators.required
+
+  ]);
+  authorNameFormControl = new FormControl('',[
+    Validators.required
+  ]);
+  publishedYearFormControl = new FormControl('',[
+    Validators.required
+  ]);
+  quantityFormControl = new FormControl('',[
+    Validators.required
+  ]);
+  priceFormControl = new FormControl('',[
+    Validators.required
+  ]);
+  descriptionFormControl = new FormControl('',[
+    Validators.required
+  ]);
 
   ngOnInit() {
   }

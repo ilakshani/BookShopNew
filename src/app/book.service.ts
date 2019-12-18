@@ -9,9 +9,11 @@ export class BookService {
 
   constructor(public http: HttpClient) { }
 
-  public insertbookUrl = 'http://127.0.0.1:8000/api/insertnewbook';
-  public viewBookUrl = 'http://127.0.0.1:8000/api/getalldetails';
-  public deletebookUrl = 'http://127.0.0.1:8000/api/deletebook';
+  public serverUrl = 'https://afternoon-ridge-09902.herokuapp.com/';
+  public insertbookUrl = this.serverUrl+ 'api/insertnewbook';
+  public viewBookUrl = this.serverUrl+'api/getalldetails';
+  public deletebookUrl = this.serverUrl+'api/deletebook';
+  public editBookDetails = this.serverUrl+'api/editbookdetails/';
   public bookdata: fields[] = [];
   public isBookLoad: boolean = false;
   public viewbook: boolean = false;
@@ -44,7 +46,7 @@ export class BookService {
   }
 
   updateBook(id,data){
-    return this.http.patch<any>('http://127.0.0.1:8000/api/editbookdetails/'+id,data);
+    return this.http.patch<any>(this.editBookDetails+id,data);
   }
 }
 

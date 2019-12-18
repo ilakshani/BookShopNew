@@ -9,6 +9,10 @@
             </mat-form-field>
         </div>
         <div class="new">
+            <div *ngIf="book.isLoading">
+                <mat-progress-spinner style="left:40%;position: absolute;z-index: 2;top: 300px;"  mode="indeterminate">
+                </mat-progress-spinner>
+            </div>
             <div class="book-list" *ngFor="let books of book.bookdata; index as index">
                 <div style="height: 80px;"
                     *ngIf="books.bookname.concat().toLowerCase().includes(searchKey.toLowerCase()) || books.authorname.concat().toLowerCase().includes(searchKey.toLowerCase())">
@@ -86,6 +90,10 @@
                         <input matInput  autocomplete="off" [(ngModel)]="selected_book.authorname" [formControl]="authorNameFormControl">
                     </mat-form-field>
                    </div>
+                   <div *ngIf="book.isLoading">
+                    <mat-progress-spinner style="left:40%;position: absolute;z-index: 2;"  mode="indeterminate">
+                    </mat-progress-spinner>
+                </div>
                    <div>
                     <mat-form-field style="width: 30%;margin-left:5%;">
                         <mat-label>Published Year</mat-label>

@@ -6,6 +6,7 @@
                 <mat-form-field>
                     <mat-label>Book Name</mat-label>
                     <input autocomplete="off" matInput [formControl]="bookNameFormControl">
+                    <mat-error *ngIf="bookNameFormControl.hasError('required')">Book Name is Required</mat-error>
                 </mat-form-field>
             </div>
             <div>

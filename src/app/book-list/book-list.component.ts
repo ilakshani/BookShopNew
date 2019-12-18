@@ -53,10 +53,12 @@ export class BookListComponent implements OnInit {
   }
 
   deleteaBook(id: number) {
+    this.book.isLoading=true;
     console.log(id);
     this.book.deleteaBook(id).subscribe((result) => {
       console.log(result);
       this.getData();
+      this.book.isLoading=false;
     })
   }
 
@@ -79,6 +81,7 @@ export class BookListComponent implements OnInit {
 
   selected_book: fields;
   saveChanges() {
+    this.book.isLoading=true;
     console.log("changed...");
     console.log();
     this.book.updateBook(this.book.bookdata[this.book.bookindex].id, {
@@ -91,6 +94,7 @@ export class BookListComponent implements OnInit {
       D_Status: this.selected_book.deletestatus
     }).subscribe((data) => {
       console.log(data);
+      this.book.isLoading=false;
       this.getData();
       this.book.editbook=false;
 
