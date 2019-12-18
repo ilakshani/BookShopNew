@@ -13,46 +13,53 @@
                 <mat-form-field>
                     <mat-label>Author's Name</mat-label>
                     <input matInput autocomplete="off" matInput [formControl]="authorNameFormControl">
+                    <mat-error *ngIf="authorNameFormControl.hasError('required')">Author Name is Required</mat-error>
                 </mat-form-field>
             </div>
             <div>
                 <mat-form-field>
                     <mat-label>Description</mat-label>
-                    <textarea matInput autocomplete="off" matInput rows="3" [formControl]="descriptionFormControl"></textarea>
+                    <textarea matInput autocomplete="off" matInput rows="3"
+                        [formControl]="descriptionFormControl"></textarea>
+                    <mat-error *ngIf="descriptionFormControl.hasError('required')">Description is Required</mat-error>
                 </mat-form-field>
             </div>
-            <div id="one" style="margin-left: 3%;" >
+            <div id="one" style="margin-left: 3%;">
                 <mat-form-field style="width:100%;">
                     <mat-label>Published Year</mat-label>
-                    <input matInput autocomplete="off" matInput [formControl]="publishedYearFormControl">
+                    <input minlength=4 maxlength=4 matInput autocomplete="off" matInput [formControl]="publishedYearFormControl">
+                    <mat-error *ngIf="publishedYearFormControl.hasError('required')">Published Year is Required
+                    </mat-error>
 
                 </mat-form-field>
             </div>
             <div *ngIf="book.isLoading">
-                <mat-progress-spinner style="left:40%;position: absolute;z-index: 2;"  mode="indeterminate">
+                <mat-progress-spinner style="left:40%;position: absolute;z-index: 2;" mode="indeterminate">
                 </mat-progress-spinner>
             </div>
-            
-            <div id="one" style="margin-left: 10%;"  >
+
+            <div id="one" style="margin-left: 10%;">
                 <mat-form-field style="width:100%">
                     <mat-label>Quantity</mat-label>
-                    <input matInput autocomplete="off" matInput [formControl]="quantityFormControl">
-
+                    <input min=1 matInput autocomplete="off" matInput [formControl]="quantityFormControl">
+                    <mat-error *ngIf="quantityFormControl.hasError('required')">Quantity is Required</mat-error>
                 </mat-form-field>
             </div>
 
-            <div style="position: relative;">
+            <div>
                 <mat-form-field>
                     <mat-label>Price</mat-label>
                     <input matInput autocomplete="off" matInput [formControl]="priceFormControl">
-
+                    <mat-error *ngIf="priceFormControl.hasError('required')">Price is Required</mat-error>
                 </mat-form-field>
             </div>
             <div>
-                <button class="button1" mat-raised-button color="primary" (click)="insertBook()">Insert Book</button>
+                <button class="button1"
+                    [disabled]="bookNameFormControl.invalid || authorNameFormControl.invalid || descriptionFormControl.invalid || publishedYearFormControl.invalid || quantityFormControl.invalid || priceFormControl.invalid"
+                    mat-raised-button color="primary" (click)="insertBook()">Insert Book</button>
                 <button class="button2" mat-raised-button color="warn" (click)="book.isBookLoad=false">Cancel</button>
             </div>
         </form>
     </div>
-    
+
 </div>
