@@ -25,24 +25,41 @@ export class BookListComponent implements OnInit {
   public description: string;
 
   //form controls
-  bookNameFormControl = new FormControl('', []);
-  authorNameFormControl = new FormControl('', []);
-  publishedYearFormControl = new FormControl('', []);
-  quantityFormControl = new FormControl('', []);
-  priceFormControl = new FormControl('', []);
-  descriptionFormControl = new FormControl('', []);
+  bookNameFormControl = new FormControl('', [
+    Validators.required
+  ]);
+  authorNameFormControl = new FormControl('', [
+    Validators.required
+  ]);
+  publishedYearFormControl = new FormControl('', [
+    Validators.required,
+    Validators.pattern("^((\\+91-?)|0)?[0-9]{4}$")
+  ]);
+  quantityFormControl = new FormControl('', [
+    Validators.required,
+    Validators.pattern('^[1-9][0-9]*$')
+  ]);
+  priceFormControl = new FormControl('', [
+    Validators.required,
+    Validators.pattern('^[0-9]+(\.[0-9]{1,2})?$')
+  ]);
+  descriptionFormControl = new FormControl('', [
+    Validators.required
+  ]);
 
   ngOnInit() {
     this.book.bookdata = [];
     this.getData();
   }
   getData() {
+    this.book.isLoading=true;
     this.book.bookdata = [];
     this.book.viewData().subscribe((data) => {
       data.forEach(element => {
         console.log(element);
         this.book.bookdata.push(new fields(element));
       });
+      this.book.isLoading=false;
       console.log("show");
     });
   }

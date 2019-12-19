@@ -28,9 +28,8 @@
                 <mat-form-field style="width:100%;">
                     <mat-label>Published Year</mat-label>
                     <input minlength=4 maxlength=4 matInput autocomplete="off" matInput [formControl]="publishedYearFormControl">
-                    <mat-error *ngIf="publishedYearFormControl.hasError('required')">Published Year is Required
-                    </mat-error>
-
+                    <mat-error *ngIf="publishedYearFormControl.hasError('required')">Published Year is Required</mat-error>
+                    <mat-error *ngIf="publishedYearFormControl.hasError('pattern')">Enter valid Year</mat-error>
                 </mat-form-field>
             </div>
             <div *ngIf="book.isLoading">
@@ -43,6 +42,7 @@
                     <mat-label>Quantity</mat-label>
                     <input min=1 matInput autocomplete="off" matInput [formControl]="quantityFormControl">
                     <mat-error *ngIf="quantityFormControl.hasError('required')">Quantity is Required</mat-error>
+                    <mat-error *ngIf="quantityFormControl.hasError('pattern')">Enter quantity with grater than 0 values</mat-error>
                 </mat-form-field>
             </div>
 
@@ -50,7 +50,8 @@
                 <mat-form-field>
                     <mat-label>Price</mat-label>
                     <input matInput autocomplete="off" matInput [formControl]="priceFormControl">
-                    <mat-error *ngIf="priceFormControl.hasError('required')">Price is Required</mat-error>
+                    <mat-error *ngIf="priceFormControl.hasError('required')">Book Price is Required</mat-error>
+                    <mat-error *ngIf="priceFormControl.hasError('pattern')">Please enter value as Currency</mat-error>
                 </mat-form-field>
             </div>
             <div>

@@ -37,8 +37,11 @@
 }
 
 .book-list{
-    opacity: 80%;
+    opacity: 50%;
     width:95%;
+}
+.book-list:hover{
+    opacity: 80%;
 }
 .add-book{
     width:40%;
@@ -148,5 +151,9 @@ button.submit-button{
 .title{
     text-align: center;
 }
-
+.save-button{
+    margin-right:10px;
+    width: 20%;
+    margin-left: 52%;
+}
 
